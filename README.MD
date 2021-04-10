@@ -1,5 +1,5 @@
 
-#React tutorial
+# React tutorial
 
 
 React patří mezi nejpopulárnější knihovny pro tvorbu uživatelského rozhraní webových aplikací.
@@ -30,7 +30,7 @@ npm -v
 npx -v
 ```
 
-###Základní příkazy
+### Základní příkazy
 
 Instalace a spuštění nového projektu. React aplikace se spustí na portu [3000](http://localhost:3000).
 ```
@@ -47,7 +47,7 @@ npx json-server --watch db.json --static ./img --port 3001
 ```
 
 
-###Slovníček pojmů
+### Slovníček pojmů
 
 
 #### Single-page aplikace
@@ -85,13 +85,13 @@ const element = (
 - funkce, které se spouští v určité fázi životního cyklu komponenty (změna vstupních parametrů)
 - dostupné až od verze 16.8  (ještě se můžete setkat se zápisem tříd) 
 
-####[useState](https://reactjs.org/docs/hooks-state.html) 
+#### [useState](https://reactjs.org/docs/hooks-state.html) 
 
 - používá pro udržení stavu v komponentě 
 - při změně stavu dojde k překreslení komponenty a všech jeho potomků
 - hook
 
-####[useEffect](https://reactjs.org/docs/hooks-effect.html) 
+#### [useEffect](https://reactjs.org/docs/hooks-effect.html) 
 
 - funkce, která se spouští v závislosti na změnách stavu v komponentě
 - hook 
@@ -114,7 +114,7 @@ function Example() {
 }
 ```
 
-####[fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) 
+#### [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) 
 
 - funkce pro volání serveru
 
@@ -124,7 +124,7 @@ fetch('http://example.com/movies.json')
   .then(data => console.log(data));
 ```
 
-####[map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) 
+#### [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) 
 
 - funkce, která iteruje přes všechny prvky poli; 
 pro každý prvek se očekává návratová hodnota; 
@@ -139,7 +139,7 @@ var sqrtObjectItems = items.map((val, index) => {
 })
 ```
 
-####[filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) 
+#### [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) 
 
 - používá se pro filtrování položek
 - vrací vyfiltrovaný seznam
