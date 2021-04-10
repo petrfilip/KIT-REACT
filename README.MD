@@ -36,9 +36,10 @@ npm start
 ```
 
 
-Start mock serveru na portu [3001](http://localhost:3001). Je nutno mít soubor `db.json`, který obsahuje datové struktury.
+Start mock serveru na portu [3001](http://localhost:3001). Je nutno mít soubor `db.json`, který obsahuje datové struktury. 
+Dále se servírují soubory z adresáře `./img`. Pozor na relativní cesty.
 ```
-npx json-server --watch db.json --port 3001
+npx json-server --watch db.json --static ./img --port 3001
 ```
 
 ###Slovníček pojmů

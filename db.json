@@ -29,18 +29,6 @@
       "image": "http://localhost:3001/instanbul.png",
       "name": "Istanbul",
       "price": 150
-    },
-    {
-      "name": "Nový",
-      "price": "500",
-      "image": "http://localhost:3001/instanbul.png",
-      "id": 6
-    },
-    {
-      "name": "Nový 2",
-      "price": "400",
-      "image": "http://localhost:3001/karlovy-vary.jpg",
-      "id": 7
     }
   ]
 }
