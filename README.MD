@@ -14,6 +14,9 @@ jako je přidávání nového zboží, editace, mazání a výpis.
 Další důležitou funkcionalitou eshopu je práce s nákupním košíkem.
 
 
+[Výukové video](https://youtu.be/C4LoZjzqG_k)
+
+
 
 Pro snadnější vývoj je vhodný mít nainstalované
 - [Node.js](https://nodejs.org/en/download/)
