@@ -1,8 +1,0 @@
-POST http://localhost:3001/products/
-Content-Type: application/json
-
-{
-  "image": "http://localhost:3001/moskva2.jpg",
-  "name": "Moskva",
-  "price": 500
-}
