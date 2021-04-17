@@ -21,7 +21,7 @@ function ProductForm(props) {
     }
 
 
-    fetch(`${process.env.REACT_APP_TARGET_SHOP_DOMAIN}/products`, {
+    fetch('http://localhost:3001/products', {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       headers: {
         'Content-Type': 'application/json'
