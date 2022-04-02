@@ -18,8 +18,13 @@ repositories {
   mavenCentral()
 }
 
+
+compileJava {
+  dependsOn 'runReactBuild'
+  dependsOn 'copyReactBuild'
+}
+
 task runReactBuild(type: Exec) {
-  dependsOn 'build'
   workingDir "./../react-eshop"
   commandLine "npm", "run", "build"
 }
