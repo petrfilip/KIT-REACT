@@ -29,6 +29,12 @@
       "image": "http://localhost:3001/instanbul.png",
       "name": "Istanbul",
       "price": 150
+    },
+    {
+      "name": "AAAA",
+      "price": "11111",
+      "image": "http://localhost:3001/karlovy-vary.jpg",
+      "id": 6
     }
   ]
 }

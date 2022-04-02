@@ -1,0 +1,44 @@
+plugins {
+  id 'org.springframework.boot' version '2.6.6'
+  id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+  id 'java'
+}
+
+group = 'cz.upce.eshop'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+  compileOnly {
+    extendsFrom annotationProcessor
+  }
+}
+
+repositories {
+  mavenCentral()
+}
+
+task runReactBuild(type: Exec) {
+  dependsOn 'build'
+  workingDir "./../react-eshop"
+  commandLine "npm", "run", "build"
+}
+
+task copyReactBuild(type: Copy) {
+  dependsOn 'runReactBuild'
+  from './../react-eshop/build'
+  into './src/main/resources/static'
+}
+
+dependencies {
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  compileOnly 'org.projectlombok:lombok'
+  developmentOnly 'org.springframework.boot:spring-boot-devtools'
+  annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+  annotationProcessor 'org.projectlombok:lombok'
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+  useJUnitPlatform()
+}
