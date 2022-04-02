@@ -19,21 +19,21 @@ repositories {
 }
 
 
-compileJava {
-  dependsOn 'runReactBuild'
-  dependsOn 'copyReactBuild'
-}
-
-task runReactBuild(type: Exec) {
-  workingDir "./../react-eshop"
-  commandLine "npm", "run", "build"
-}
-
-task copyReactBuild(type: Copy) {
-  dependsOn 'runReactBuild'
-  from './../react-eshop/build'
-  into './src/main/resources/static'
-}
+//compileJava {
+//  dependsOn 'runReactBuild'
+//  dependsOn 'copyReactBuild'
+//}
+//
+//task runReactBuild(type: Exec) {
+//  workingDir "./../react-eshop"
+//  commandLine "npm", "run", "build"
+//}
+//
+//task copyReactBuild(type: Copy) {
+//  dependsOn 'runReactBuild'
+//  from './../react-eshop/build'
+//  into './src/main/resources/static'
+//}
 
 dependencies {
   implementation 'org.springframework.boot:spring-boot-starter-web'
