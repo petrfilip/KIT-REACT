@@ -24,18 +24,21 @@ repositories {
 //  dependsOn 'copyReactBuild'
 //}
 //
-//task runReactBuild(type: Exec) {
-//  workingDir "./../react-eshop"
-//  commandLine "npm", "run", "build"
-//}
-//
-//task copyReactBuild(type: Copy) {
-//  dependsOn 'runReactBuild'
-//  from './../react-eshop/build'
-//  into './src/main/resources/static'
-//}
+task runReactBuild(type: Exec) {
+  workingDir "./../react-eshop"
+  commandLine "npm", "run", "build"
+}
+
+task copyReactBuild(type: Copy) {
+  dependsOn 'runReactBuild'
+  from './../react-eshop/build'
+  into './src/main/resources/static'
+}
 
 dependencies {
+  implementation 'io.springfox:springfox-boot-starter:3.0.0'
+  runtimeOnly 'com.h2database:h2'
+  implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
   implementation 'org.springframework.boot:spring-boot-starter-web'
   compileOnly 'org.projectlombok:lombok'
   developmentOnly 'org.springframework.boot:spring-boot-devtools'
