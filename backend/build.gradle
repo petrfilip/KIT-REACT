@@ -1,7 +1,6 @@
 plugins {
   id 'org.springframework.boot' version '2.6.6'
   id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-  id "com.moowork.node" version "1.3.1"
   id 'java'
 }
 
@@ -19,33 +18,22 @@ repositories {
   mavenCentral()
 }
 
-//jar.dependsOn(':copyReactBuild')
-//compileJava.dependsOn(':copyReactBuild')
-//build.dependsOn(':copyReactBuild')
-//bootRun.dependsOn(':copyReactBuild')
 
-//task runReactBuild(type: Exec) {
-//  workingDir "./../react-eshop"
-//  commandLine "npm", "run", "build"
+//compileJava {
+//  dependsOn 'runReactBuild'
+//  dependsOn 'copyReactBuild'
 //}
+//
+task runReactBuild(type: Exec) {
+  workingDir "./../react-eshop"
+  commandLine "npm", "run", "build"
+}
 
-//task copyReactBuild(type: Copy) {
-////  dependsOn 'buildReactApp'
-//  from './../react-eshop/build'
-//  into './src/main/resources/static'
-//}
-//
-//
-//task buildReactApp(type: NpmTask) {
-//
-//  execOverrides {
-//    it.ignoreExitValue = true
-//    it.workingDir = "./../react-eshop"
-//  }
-//
-//  // install the express package only
-//  args = ['run','build']
-//}
+task copyReactBuild(type: Copy) {
+  dependsOn 'runReactBuild'
+  from './../react-eshop/build'
+  into './src/main/resources/static'
+}
 
 dependencies {
   implementation 'io.springfox:springfox-boot-starter:3.0.0'
