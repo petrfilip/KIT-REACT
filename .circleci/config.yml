@@ -5,4 +5,4 @@ workflows:
   checkout-build-test:
     jobs:
       - gradle/test:
-          app_src_directory: backend
+          app_src_directory: ~/backend
