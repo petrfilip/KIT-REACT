@@ -41,4 +41,16 @@ class LoadProductTest {
 				.andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON));
 	}
 
+
+	@Test
+	void productNotFound() throws Exception {
+
+		mockMvc.perform(MockMvcRequestBuilders.get("/products/10")
+						.contentType(MediaType.APPLICATION_JSON))
+
+
+				.andExpect(MockMvcResultMatchers.status().is4xxClientError());
+	}
+
+
 }
