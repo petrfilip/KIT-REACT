@@ -1,6 +1,6 @@
 orbs:
   gradle: circleci/gradle@2.2.0
 workflows:
-  example-workflow:
+  checkout-build-test:
     jobs:
       - gradle/test
