@@ -158,3 +158,4 @@ const result = words.filter(word => word.length > 6);
 #### Zdroje
 - https://reactjs.org/docs/
 - https://developer.mozilla.org/en-US/docs/
+

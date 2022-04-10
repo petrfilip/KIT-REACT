@@ -12,6 +12,8 @@ import {
 
 function App() {
 
+  const [sortBy, setSortBy] = useState("id")
+  const [page, setPage] = useState(0)
   const [cart, setCart] = useState([])
   const [data, setData] = useState([])
   const [isPending, setIsPending] = useState(true)
@@ -26,7 +28,7 @@ function App() {
 
   useEffect(() => {
     setTimeout(() => {
-        fetch(`${process.env.REACT_APP_TARGET_SHOP_DOMAIN}/products`)
+        fetch(`${process.env.REACT_APP_TARGET_SHOP_DOMAIN}/products?pageNumber=${page}&sortBy=${sortBy}`)
           .then(response => {
             if (response.ok) {
               return response.json()
@@ -37,9 +39,9 @@ function App() {
           .catch((err) => setError(err.message))
           .finally(() => setIsPending(false))
       }
-      , 1000)
+      , 10)
 
-  }, [])
+  }, [page, sortBy])
 
   const addToCartHandler = function(product) {
     const newCart = [...cart];
@@ -89,12 +91,20 @@ function App() {
             {isPending && "Loading data..."}
             {error && <div>{error}</div>}
 
+            <button onClick={() => setSortBy("price")}>By price</button>
+            <button onClick={() => setSortBy("name")}>By name</button>
+
             <div style={{
               display: "flex",
               flexWrap: "wrap",
               margin: "5px"
             }}>
               {data.map(item => <Product key={item.id} product={item} onClickHandler={addToCartHandler}/>)}
+            </div>
+            <div>
+              {page}
+              <button onClick={() => setPage(page - 1)}>Prev</button>
+              <button onClick={() => setPage(page + 1)}>Next</button>
             </div>
           </Route>
         </Switch>
